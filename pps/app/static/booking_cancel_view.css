@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo img{
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-top: 0px;
+  max-width: 130px;
+  display: flex;
+  gap: 20px;
+  image-resolution: 100px;
+  
+}
+
+h1, h2 {
+  font-family: sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+/*.flex_space {
+  display: flex;
+  justify-content: space-between;
+}*/
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.primary-btn {
+  padding: 15px 40px;
+  background: #204c98;
+  font-weight: bold;
+  color: white;
+}
+
+.secondary-btn {
+  padding: 15px 40px;
+  background: none;
+  border: 2px solid white;
+  font-weight: bold;
+  color: white;
+}
+
+.container {
+  max-width: 85%;
+  margin: auto;
+}
+
+/*--------header---------*/
+header {
+  height: 10vh;
+  /*line-height: 10vh;*/
+  padding: 0 20px;
+  background-color: #204c98;
+}
+
+header img {
+  margin: 20px 0;
+}
+
+/*header ul {
+  display: block;
+}*/
+
+header ul li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+header ul li a {
+  color: #fff;
+  margin: 0 10px;
+  transition: 0.5s;
+}
+
+header ul li a:hover {
+  color: #fbb234;
+}
+
+header i {
+  margin: 0 20px;
+}
+
+header button {
+  padding: 13px 40px;
+}
+
+header .navlinks span {
+  display: none;
+}
+.navlinks{
+  justify-content: center;
+  text-align: center;
+  margin-top: -40px;
+  
+}
+
+.login-var{
+  justify-content: end;
+  text-align: right;
+  margin-top: -22px;
+}
+
+.room{
+  background-color: antiquewhite;
+  position: relative;
+  top: 100px;
+  left: 300px;
+  width: 60%;
+  height: 300px;
+  border: 4px solid #204c98;
+  border-radius: 8px;
+}
+
+
+.cancel {
+  position: relative;
+  top: 100px;
+  left: 270px;
+  width:300px;
+  border-radius: 0.5rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #555;
+  background-color: #dfdfdf;
+  color:rgb(6, 137, 245);
+  outline:none;
+}
+
+.cancel:hover{
+  color:#dfdfdf;
+  background-color: red;
+}

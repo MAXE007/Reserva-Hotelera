@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Section</title>
+    <link rel="stylesheet" href="{% static '../static/news.css' %}">
+</head>
+<body>
+    
+    <header>
+        <div class="content flex_space">
+          <div class="logo">
+            <img src="../static/images/utn.png" alt="">
+          </div>
+          <div class="navlinks">
+            <ul id="menulist">
+              <li><a href="{% url 'app:RoomListView' %}">Inicio</a> </li>
+              <li><a href="#about">Nosotros</a> </li>
+              <li><a href="{% url 'app:BookingListView' %}">Mis Reservas</a> </li>
+              <li><a href="#news">Noticias</a> </li>
+    
+          <div class="login-var">
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'account_logout' %}">Cerrar Sesion</a> </li>
+          {% else %}
+            <li><a href="{% url 'account_login' %}">Inicia Sesion o Registrate</a> </li>
+          </div>
+          {% endif %}
+              <!--<li> <i class="fa fa-search"></i> </li>-->
+              <!--<li> <button class="primary-btn">RESERVÁ AHORA</button> </li>-->
+            </ul>
+            <span class="fa fa-bars" onclick="menutoggle()"></span>
+          </div>
+        </div>
+    </header>
+
+
+    <section class="news-container">
+        {% for noticia in noticias %}
+            <article class="news-item">
+                <div class="news-image">
+                    {% if noticia.image %}
+                        <img src="{{ noticia.image.url }}" alt="Image for {{ noticia.title }}">
+                    {% else %}
+                        <p class="no-image">No image available</p>
+                    {% endif %}
+                </div>
+                <div class="news-content">
+                    <h2>{{ noticia.title }}</h2>
+                    <p class="news-date">Published: {{ noticia.created_at|date:"F j, Y" }}</p>
+                    <p class="news-description">{{ noticia.content|truncatewords:30 }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+</body>
+</html>
